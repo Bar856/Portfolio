@@ -1,0 +1,31 @@
+{
+    "title": "My Top Projects",
+    "projects": [
+        {
+            "name": "Pikalead",
+            "tools": "Next.js, React, Node.js, SaaS",
+            "desc": "A curated marketplace for providers and contractors to match on real jobs—pay as you go.",
+            "screenshots": ["/screenshots/pikalead.png"],
+            "url": "https://pikalead.com"
+        },
+        {
+            "name": "iProDash CRM",
+            "tools": "Next.js, React, Node.js, SaaS",
+            "desc": "Lightning-fast CRM for field ops. Manage field jobs, technician assignments, and business reports — all in one place. Features technician management, profit tracking, auto-reports, and smart filtering.",
+            "screenshots": ["/screenshots/iprodash.png"],
+            "url": "https://iprodash.com"
+        },
+        {
+            "name": "Switcher App For DJs",
+            "tools": "Python, CustomTkinter, MongoDB",
+            "desc": "Switcher is a tool for Israeli DJs that allows them to play songs with Hebrew file names on Pioneer all-in-one controllers, which do not support Hebrew. The tool converts file names to English and is built with customTkinter GUI and MongoDB.",
+            "screenshots": ["/screenshots/Switcher/1.png"]
+        },
+        {
+            "name": "Yelp Nearby Jobs Responder",
+            "tools": "Python, Selenium, BeautifulSoup",
+            "desc": "Automated script that replies to nearby job leads before they expire. Opens Chrome, logs into Yelp, listens for new emails, and sends custom messages to customers automatically.",
+            "screenshots": ["/screenshots/Yelp/1.png"]
+        }
+    ]
+}
