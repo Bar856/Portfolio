@@ -152,11 +152,11 @@ function HeroSection() {
           <motion.div
             variants={fadeInUp}
             className="flex items-center gap-3 mb-8">
-            <span className="w-12 h-[1px] bg-accent" />
+            <span className="w-12 h-px bg-accent" />
             <span className="text-xs font-medium tracking-[0.3em] uppercase text-text-muted">
               Python & Full-Stack Developer
             </span>
-            <span className="w-12 h-[1px] bg-accent" />
+            <span className="w-12 h-px bg-accent" />
           </motion.div>
 
           {/* Main heading */}
@@ -191,7 +191,7 @@ function HeroSection() {
             </motion.a>
             <motion.a
               href="#contact"
-              className="px-8 py-4 text-xs font-medium tracking-[0.1em] uppercase text-[#8a8a9a] hover:text-foreground transition-colors duration-300"
+              className="px-8 py-4 text-xs font-medium tracking-widest uppercase text-[#8a8a9a] hover:text-foreground transition-colors duration-300"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}>
               Get in Touch →
@@ -212,7 +212,7 @@ function HeroSection() {
             <span className="text-[10px] tracking-[0.2em] uppercase text-[#8a8a9a]">
               Scroll
             </span>
-            <div className="w-[1px] h-12 bg-gradient-to-b from-accent to-transparent" />
+            <div className="w-px h-12 bg-linear-to-b from-accent to-transparent" />
           </motion.div>
         </motion.div>
       </motion.div>
@@ -267,7 +267,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 bg-accent text-background text-xs font-medium tracking-[0.1em] uppercase rounded-full hover:bg-accent/90 transition-colors">
+                className="px-6 py-3 bg-accent text-background text-xs font-medium tracking-widest uppercase rounded-full hover:bg-accent/90 transition-colors">
                 View Live
               </a>
             )}
@@ -275,7 +275,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         </div>
 
         {/* Content */}
-        <div className="p-6 md:p-8 flex flex-col flex-grow">
+        <div className="p-6 md:p-8 flex flex-col grow">
           <div className="flex items-start justify-between gap-4 mb-4">
             <h3 className="text-xl md:text-2xl font-semibold tracking-tight group-hover:text-accent transition-colors duration-300">
               {project.name}
@@ -302,7 +302,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             )}
           </div>
 
-          <p className="text-[#8a8a9a] text-sm md:text-base leading-relaxed mb-6 flex-grow">
+          <p className="text-[#8a8a9a] text-sm md:text-base leading-relaxed mb-6 grow">
             {project.desc}
           </p>
 
@@ -450,10 +450,10 @@ function AboutSection() {
               <div className="absolute inset-0 border border-accent/10 rounded-2xl transform -rotate-3" />
 
               {/* Main box */}
-              <div className="relative h-full bg-gradient-to-br from-[#0c0c10] to-[#12121a] rounded-2xl border border-white/5 p-8 flex flex-col justify-center">
+              <div className="relative h-full bg-linear-to-br from-[#0c0c10] to-[#12121a] rounded-2xl border border-white/5 p-8 flex flex-col justify-center">
                 <div className="text-center">
                   <div className="text-8xl font-bold text-accent/20 mb-4">
-                    5+
+                    10+
                   </div>
                   <div className="text-sm tracking-[0.2em] uppercase text-[#8a8a9a]">
                     Years of Experience
@@ -473,7 +473,7 @@ function AboutSection() {
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-bold text-accent/80 mb-2">
-                      30+
+                      15+
                     </div>
                     <div className="text-xs tracking-wider uppercase text-[#8a8a9a]">
                       Happy Clients
