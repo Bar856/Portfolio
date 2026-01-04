@@ -49,6 +49,54 @@ const scaleIn = {
   },
 };
 
+// Animated counter component
+function CountUp({
+  end,
+  duration = 2,
+  suffix = "",
+  className = "",
+}: {
+  end: number;
+  duration?: number;
+  suffix?: string;
+  className?: string;
+}) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    let startTime: number;
+    let animationFrame: number;
+
+    const animate = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
+
+      // Easing function for smooth deceleration
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      setCount(Math.floor(easeOutQuart * end));
+
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animationFrame);
+  }, [isInView, end, duration]);
+
+  return (
+    <span ref={ref} className={className}>
+      {count}
+      {suffix}
+    </span>
+  );
+}
+
 // Spotlight component for cursor tracking
 function Spotlight() {
   useEffect(() => {
@@ -453,7 +501,7 @@ function AboutSection() {
               <div className="relative h-full bg-linear-to-br from-[#0c0c10] to-[#12121a] rounded-2xl border border-white/5 p-8 flex flex-col justify-center">
                 <div className="text-center">
                   <div className="text-8xl font-bold text-accent/20 mb-4">
-                    10+
+                    <CountUp end={10} duration={2} suffix="+" />
                   </div>
                   <div className="text-sm tracking-[0.2em] uppercase text-[#8a8a9a]">
                     Years of Experience
@@ -465,7 +513,7 @@ function AboutSection() {
                 <div className="grid grid-cols-2 gap-8">
                   <div className="text-center">
                     <div className="text-3xl font-bold text-accent/80 mb-2">
-                      50+
+                      <CountUp end={50} duration={2.2} suffix="+" />
                     </div>
                     <div className="text-xs tracking-wider uppercase text-[#8a8a9a]">
                       Projects
@@ -473,7 +521,7 @@ function AboutSection() {
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-bold text-accent/80 mb-2">
-                      15+
+                      <CountUp end={15} duration={1.8} suffix="+" />
                     </div>
                     <div className="text-xs tracking-wider uppercase text-[#8a8a9a]">
                       Happy Clients
