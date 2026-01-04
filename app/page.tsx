@@ -154,7 +154,7 @@ function HeroSection() {
             className="flex items-center gap-3 mb-8">
             <span className="w-12 h-[1px] bg-accent" />
             <span className="text-xs font-medium tracking-[0.3em] uppercase text-text-muted">
-              Full-Stack Developer
+              Python & Full-Stack Developer
             </span>
             <span className="w-12 h-[1px] bg-accent" />
           </motion.div>
@@ -171,9 +171,10 @@ function HeroSection() {
           <motion.p
             variants={fadeInUp}
             className="max-w-xl text-lg md:text-xl text-[#8a8a9a] leading-relaxed mb-12">
-            Building premium web applications with meticulous attention to
-            detail. Specializing in <span className="text-accent">Next.js</span>
-            , <span className="text-accent">React</span>, and modern{" "}
+            Building premium web & mobile applications with meticulous attention
+            to detail. Specializing in{" "}
+            <span className="text-accent">Next.js</span>,{" "}
+            <span className="text-accent">React</span>, and modern{" "}
             <span className="text-accent">SaaS</span> solutions.
           </motion.p>
 
@@ -233,9 +234,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         duration: 0.8,
         delay: index * 0.15,
         ease: [0.16, 1, 0.3, 1],
-      }}>
+      }}
+      className="h-full">
       <motion.article
-        className="project-card group"
+        className="project-card group h-full flex flex-col"
         whileHover={{ scale: 1.01 }}
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}>
         {/* Image container */}
@@ -273,7 +275,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         </div>
 
         {/* Content */}
-        <div className="p-6 md:p-8">
+        <div className="p-6 md:p-8 flex flex-col flex-grow">
           <div className="flex items-start justify-between gap-4 mb-4">
             <h3 className="text-xl md:text-2xl font-semibold tracking-tight group-hover:text-accent transition-colors duration-300">
               {project.name}
@@ -300,12 +302,12 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             )}
           </div>
 
-          <p className="text-[#8a8a9a] text-sm md:text-base leading-relaxed mb-6">
+          <p className="text-[#8a8a9a] text-sm md:text-base leading-relaxed mb-6 flex-grow">
             {project.desc}
           </p>
 
           {/* Tech tags */}
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 mt-auto">
             {project.tools.split(", ").map((tool) => (
               <span key={tool} className="tag">
                 {tool}
@@ -349,7 +351,7 @@ function ProjectsSection({ projects }: { projects: Project[] }) {
         </motion.div>
 
         {/* Projects grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 items-stretch">
           {projects.map((project, index) => (
             <ProjectCard key={project.name} project={project} index={index} />
           ))}
